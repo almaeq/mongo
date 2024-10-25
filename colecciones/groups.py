@@ -13,6 +13,9 @@ def insert_groups():
 
     for chat in group_chats:
         members = chat['participants']
+        if not members:
+            continue  # Ignorar chats sin participantes
+
         admins = select_admins(members)
 
         group = {

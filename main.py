@@ -7,14 +7,15 @@ from colecciones.home import create_home_collection
 from maintenance import *
 
 def main():
-    ensure_user_participation()
-    update_home()
-    """create_home_collection()
-    insert_users()
+    # update_home()
+    #insert_users()
     insert_chats()
-    insert_messages()
     insert_groups()
-    insert_files()"""
+    insert_messages()
+    insert_files()
+    ensure_user_participation()
+    fix_all_collections()
+    create_home_collection()
 
 if __name__ == "__main__":
     main()

@@ -23,6 +23,10 @@ def insert_chats(total_chats=100000, total_users=1000000):
         is_group = random.random() < 0.5  # 50% probabilidad de que sea un grupo
         participants = select_participants(is_group, total_users)
 
+        # Verificar que el chat tenga participantes
+        if not participants:
+            continue
+
         chat = {
             'chatId': f'chat{i + 1}',
             'participants': participants,
@@ -39,7 +43,7 @@ def insert_chats(total_chats=100000, total_users=1000000):
         chats_collection.insert_many(chats)
 
     print(f"Se han insertado {total_chats} chats correctamente.")
-
+    
 def random_date():
     from faker import Faker
     fake = Faker()

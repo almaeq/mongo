@@ -17,7 +17,6 @@ def create_home_collection():
         chats = list(chats_collection.find({"participants": user_id}))
 
         for chat in chats:
-            # Encontrar el ID del otro participante si es un chat individual
             other_user_id = next((p for p in chat['participants'] if p != user_id), None)
             chat_name = ""
 
@@ -44,7 +43,10 @@ def create_home_collection():
             'userId': user_id,
             'chats': user_chats
         }
-        home_collection.insert_one(home_document)
+        try:
+            home_collection.insert_one(home_document)
+        except Exception as e:
+            print(f"Error insertando home document para el usuario {user_id}: {e}")
 
     print("Colección 'Home' creada correctamente con los nombres de los chats.")
 
