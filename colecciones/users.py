@@ -18,7 +18,7 @@ def generate_user(index):
         'lastSeen': fake.date_time_this_year()
     }
 
-def insert_users(batch_size=10000, total=1000000):
+def insert_users(batch_size=10000, total=700000):
     users = []
     for i in range(total):
         users.append(generate_user(i))

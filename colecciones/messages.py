@@ -7,7 +7,7 @@ fake = Faker()
 db = get_db()
 messages_collection = db['messages']
 
-def insert_messages(batch_size=80000, total=8000000):
+def insert_messages(batch_size=50000, total=5000000):
     chats = list(db['chats'].find())
     users = set()
     messages = []

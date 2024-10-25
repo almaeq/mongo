@@ -17,7 +17,7 @@ def select_participants(is_group, total_users):
 
     return list(participants)
 
-def insert_chats(total_chats=100000, total_users=1000000):
+def insert_chats(total_chats=100000, total_users=700000):
     chats = []
     for i in range(total_chats):
         is_group = random.random() < 0.5  # 50% probabilidad de que sea un grupo

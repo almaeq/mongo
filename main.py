@@ -8,7 +8,7 @@ from maintenance import *
 
 def main():
     # update_home()
-    #insert_users()
+    insert_users()
     insert_chats()
     insert_groups()
     insert_messages()
